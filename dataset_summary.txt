@@ -1,0 +1,248 @@
+============================================================================================================
+======================================= Amphibians =========================================================
+============================================================================================================
+Number of unique Animal parent class(amphibians): 1
+Number of unique Animal class(amphibians): 1
+Number of unique Animal subclass(amphibians): 3
+Number of unique animals(amphibians): 35
+Total number of animals(amphibians): 5188
+Total number of subclasses(amphibians): 
+Frog / Toad          4702
+Salamander / Newt     454
+Mudskipper             32
+Name: animal_subclass, dtype: int64
+
+
+============================================================================================================
+======================================= Birds ==============================================================
+============================================================================================================
+Number of unique Animal parent class(birds): 5
+Number of unique Animal class(birds): 6
+Number of unique Animal subclass(birds): 22
+Number of unique animals(birds): 179
+Total number of animals(birds): 6819
+Total number of subclasses(birds): 
+Bird                                                                     6665
+Chicken / Curassow / Turkey                                                59
+Water bird / Duck / Swan / Goose                                           49
+Frog / Toad                                                                 7
+Deer / Antelope / Caribou / Moose                                           5
+Hyena                                                                       4
+Lizard / Gecko / Draco / Iguana / Chamelon                                  4
+Kangaroo / Wallaby                                                          4
+Cat / Lion / Tiger / Cheetah / Leopard / Cheetah / Cougar / Civet cat       3
+Fish                                                                        3
+Mudskipper                                                                  2
+Dog / Wolf / Fox / Coyote / Jackal                                          2
+Otter                                                                       2
+Tortoise / Turtle                                                           2
+Alpaca / Camel                                                              1
+Rodent / Rat / Mouse / Hamster / Guinea pig / Pika                          1
+Cow / Buffalo / Bison                                                       1
+Horse                                                                       1
+Elephant                                                                    1
+Racoon                                                                      1
+Zebra                                                                       1
+Squirrel                                                                    1
+Name: animal_subclass, dtype: int64
+
+
+============================================================================================================
+======================================= Fish ===============================================================
+============================================================================================================
+Number of unique Animal parent class(fish): 1
+Number of unique Animal class(fish): 2
+Number of unique Animal subclass(fish): 5
+Number of unique animals(fish): 45
+Total number of animals(fish): 3669
+Total number of subclasses(fish): 
+Fish              3192
+Dolphin / Orca     221
+Shark              155
+Eel                 91
+Whale               10
+Name: animal_subclass, dtype: int64
+============================================================================================================
+======================================= Reptiles ============================================================
+============================================================================================================
+Number of unique Animal parent class(reptiles): 1
+Number of unique Animal class(reptiles): 3
+Number of unique Animal subclass(reptiles): 4
+Number of unique animals(reptiles): 46
+Total number of animals(reptiles): 4836
+Total number of subclasses(reptiles): 
+Lizard / Gecko / Draco / Iguana / Chamelon    2754
+Tortoise / Turtle                             1133
+Crocodile / Alligator                          935
+Snake / Cobra / Viper / Python                  14
+Name: animal_subclass, dtype: int64
+
+
+============================================================================================================
+======================================= Mammals ==============================================================
+============================================================================================================
+Number of unique Animal parent class(mammals): 5
+Number of unique Animal class(mammals): 6
+Number of unique Animal subclass(mammals): 40
+Number of unique animals(mammals): 138
+Total number of animals(mammals): 5980
+Total number of subclasses(mammals): 
+Horse                                                                              1102
+Cat / Lion / Tiger / Cheetah / Leopard / Cheetah / Cougar / Civet cat               886
+Primate / Monkey / Macaque / Baboon / Chimpanzee / Gorilla / Orangutan / Langur     812
+Dog / Wolf / Fox / Coyote / Jackal                                                  509
+Deer / Antelope / Caribou / Moose                                                   416
+Otter                                                                               271
+Goat / Sheep / Ibex                                                                 254
+Kangaroo / Wallaby                                                                  249
+Squirrel                                                                            229
+Rodent / Rat / Mouse / Hamster / Guinea pig / Pika                                  207
+Giraffe                                                                             176
+Meerkat                                                                             135
+Elephant                                                                            105
+Hyena                                                                                85
+Cow / Buffalo / Bison                                                                83
+Pig / Boar / Hog                                                                     58
+Alpaca / Camel                                                                       56
+Mongoose                                                                             49
+Hare / Rabbit                                                                        46
+Weasel                                                                               40
+Racoon                                                                               33
+Koala                                                                                29
+Bear                                                                                 28
+Echidna / Hedgehog                                                                   19
+Bird                                                                                 18
+Badger                                                                               17
+Zebra                                                                                15
+Pangolin                                                                             11
+Wombat                                                                                9
+Anteater                                                                              7
+Tapir                                                                                 6
+Loris                                                                                 5
+Platypus                                                                              4
+Beaver                                                                                3
+Rhinoceros                                                                            3
+Fish                                                                                  1
+Lizard / Gecko / Draco / Iguana / Chamelon                                            1
+Frog / Toad                                                                           1
+Mudskipper                                                                            1
+Dolphin / Orca                                                                        1
+Name: animal_subclass, dtype: int64
+============================================================================================================
+======================================= P1 =================================================================
+============================================================================================================
+Number of unique Animal parent class(P1): 5
+Number of unique Animal class(P1): 8
+Number of unique Animal subclass(P1): 49
+Number of unique animals(P1): 395
+Total number of animals(P1): 26479
+Total number of subclasses(P1): 
+Bird                                                                               6805
+Frog / Toad                                                                        4710
+Fish                                                                               3145
+Lizard / Gecko / Draco / Iguana / Chamelon                                         2750
+Tortoise / Turtle                                                                  1145
+Horse                                                                              1099
+Crocodile / Alligator                                                               889
+Cat / Lion / Tiger / Cheetah / Leopard / Cheetah / Cougar / Civet cat               885
+Primate / Monkey / Macaque / Baboon / Chimpanzee / Gorilla / Orangutan / Langur     812
+Dog / Wolf / Fox / Coyote / Jackal                                                  510
+Salamander / Newt                                                                   454
+Deer / Antelope / Caribou / Moose                                                   413
+Otter                                                                               273
+Goat / Sheep / Ibex                                                                 254
+Kangaroo / Wallaby                                                                  253
+Squirrel                                                                            230
+Dolphin / Orca                                                                      222
+Rodent / Rat / Mouse / Hamster / Guinea pig / Pika                                  198
+Giraffe                                                                             176
+Shark                                                                               144
+Meerkat                                                                             135
+Elephant                                                                            106
+Eel                                                                                  91
+Hyena                                                                                89
+Cow / Buffalo / Bison                                                                82
+Chicken / Curassow / Turkey                                                          76
+Pig / Boar / Hog                                                                     57
+Alpaca / Camel                                                                       53
+Water bird / Duck / Swan / Goose                                                     49
+Mongoose                                                                             49
+Hare / Rabbit                                                                        42
+Weasel                                                                               40
+Mudskipper                                                                           35
+Racoon                                                                               35
+Bear                                                                                 25
+Koala                                                                                25
+Echidna / Hedgehog                                                                   19
+Badger                                                                               17
+Zebra                                                                                16
+Snake / Cobra / Viper / Python                                                       14
+Pangolin                                                                             11
+Whale                                                                                10
+Wombat                                                                                9
+Anteater                                                                              7
+Tapir                                                                                 6
+Loris                                                                                 5
+Platypus                                                                              4
+Beaver                                                                                3
+Rhinoceros                                                                            2
+Name: animal_subclass, dtype: int64
+============================================================================================================
+======================================= P2 =================================================================
+============================================================================================================
+Number of unique Animal parent class(P2): 5
+Number of unique Animal class(P2): 8
+Number of unique Animal subclass(P2): 49
+Number of unique animals(P2): 394
+Total number of animals(P2): 30216
+Total number of subclasses(P2): 
+Bird                                                                               8339
+Frog / Toad                                                                        5886
+Fish                                                                               4037
+Lizard / Gecko / Draco / Iguana / Chamelon                                         3405
+Horse                                                                              1317
+Crocodile / Alligator                                                              1186
+Primate / Monkey / Macaque / Baboon / Chimpanzee / Gorilla / Orangutan / Langur     990
+Dog / Wolf / Fox / Coyote / Jackal                                                  662
+Deer / Antelope / Caribou / Moose                                                   555
+Salamander / Newt                                                                   550
+Kangaroo / Wallaby                                                                  336
+Otter                                                                               324
+Goat / Sheep / Ibex                                                                 306
+Rodent / Rat / Mouse / Hamster / Guinea pig / Pika                                  243
+Giraffe                                                                             198
+Shark                                                                               189
+Cat / Lion / Tiger / Cheetah / Leopard / Cheetah / Cougar / Civet cat               188
+Elephant                                                                            184
+Meerkat                                                                             157
+Cow / Buffalo / Bison                                                               102
+Eel                                                                                 101
+Hyena                                                                                95
+Chicken / Curassow / Turkey                                                          93
+Pig / Boar / Hog                                                                     81
+Mongoose                                                                             76
+Alpaca / Camel                                                                       74
+Tortoise / Turtle                                                                    59
+Hare / Rabbit                                                                        57
+Water bird / Duck / Swan / Goose                                                     57
+Racoon                                                                               50
+Weasel                                                                               47
+Mudskipper                                                                           43
+Koala                                                                                33
+Bear                                                                                 33
+Echidna / Hedgehog                                                                   25
+Whale                                                                                21
+Badger                                                                               17
+Zebra                                                                                16
+Snake / Cobra / Viper / Python                                                       15
+Anteater                                                                             15
+Pangolin                                                                             11
+Tapir                                                                                11
+Platypus                                                                              9
+Wombat                                                                                9
+Loris                                                                                 5
+Beaver                                                                                4
+Rhinoceros                                                                            3
+Dolphin / Orca                                                                        1
+Squirrel                                                                              1
+Name: animal_subclass, dtype: int64
