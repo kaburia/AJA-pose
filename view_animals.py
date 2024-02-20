@@ -6,13 +6,23 @@ press any key to close the image window this acts as a next button
 '''
 import cv2
 import os
+import ast # for string to list conversion
 
+# convert the dataframe columns columns joints_vis, center and joints to lists
+def convert_columns(df):
+    def str_to_array(x):
+        return ast.literal_eval(x)
+    
+    df['joints_vis'] = df['joints_vis'].apply(str_to_array)
+    df['center'] = df['center'].apply(str_to_array)
+    df['joints'] = df['joints'].apply(str_to_array)
+    return df
 
 # view the images 
 def view_images(df, category):
     image_dir = 'dataset'
     # get the images in the csv file
-    images = df[df.animal_class == category].image.values
+    images = df[df.animal_subclass == category].image.values
     # get the images in the dataset folder
     images = [os.path.join(image_dir, image) for image in images]
     # display the images
@@ -40,7 +50,10 @@ def view_images_with_bounding_boxes(df, category):
     # display the images with the bounding boxes
     for i in range(len(images)):
         img = cv2.imread(images[i])
-        x, y = centre[i]
+        try:
+            x, y = centre[i]
+        except ValueError:
+            return 'Convert the columns to lists'
         x1 = int(x - width[i]/2)
         y1 = int(y - height[i]/2)
         x2 = int(x + width[i]/2)
@@ -66,7 +79,10 @@ def view_images_with_keypoints(df, category):
     for i in range(len(images)):
         img = cv2.imread(images[i])
         for j in range(len(keypoints[i])):
-            x, y = keypoints[i][j]
+            try:
+                x, y = keypoints[i][j]
+            except ValueError:
+                return 'Convert the columns to lists'
             if visibility[i][j] == 1:
                 img = cv2.circle(img, (int(x), int(y)), 3, (0, 255, 0), 2)
         cv2.imshow('image', img)
@@ -96,7 +112,10 @@ def view_images_with_bounding_boxes_and_keypoints(df, category):
     # display the images with the bounding boxes and the keypoints
     for i in range(len(images)):
         img = cv2.imread(images[i])
-        x, y = centre[i]
+        try:
+            x, y = centre[i]
+        except ValueError:
+            return 'Convert the columns to lists'
         x1 = int(x - width[i]/2)
         y1 = int(y - height[i]/2)
         x2 = int(x + width[i]/2)
