@@ -1,5 +1,13 @@
 specs
 NVIDIA Tesla V100-PCIE 32GB (CUDA10.2, PyTorch1.10.0, Ubuntu18.04)
+vCPU
+-----------------------------------------------------------
+4 (2 cores)
+
+Memory
+-----------------------------------------------------------
+15 GB
+
 1. install virtualenv
 ```bash
 sudo apt-get install python3.8-venv
