@@ -66,8 +66,8 @@ def parse_args():
     return args
 
 
-def main(args):
-    # args = parse_args()
+def main():
+    args = parse_args()
     update_config(cfg, args)
 
     logger, final_output_dir, tb_log_dir = create_logger(
