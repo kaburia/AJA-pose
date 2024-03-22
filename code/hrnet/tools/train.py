@@ -180,6 +180,7 @@ def main():
     )
 
     for epoch in range(begin_epoch, cfg.TRAIN.END_EPOCH):
+        optimizer.step()
         lr_scheduler.step()
 
         # train for one epoch
