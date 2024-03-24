@@ -58,7 +58,7 @@ pillow==10.2.0
 protobuf==3.20.3
 pyasn1==0.5.1
 pyasn1-modules==0.3.0
-# pycocotools==2.0
+pycocotools==2.0.7
 pyparsing==3.1.2
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
@@ -79,9 +79,9 @@ tensorboard-data-server==0.7.2
 tensorboardX==2.6.2.2
 tifffile==2023.7.10
 timm
-# torch==1.8.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
-# torchvision==0.9.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
-# torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+torch==2.2.1+cu121
+torchvision==0.17.1+cu121
+torchaudio==2.2.1+cu121
 tqdm==4.66.2
 # triton
 typing-extensions==4.10.0
