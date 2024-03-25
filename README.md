@@ -1,8 +1,14 @@
 # [AJA-pose](https://sutdcv.github.io/MMVRAC/)
 
-Approach
-- we want to take the birds from the dataset, and then pass them through a detection model (explore use whatever), and then estimate the poses of the birds (explore again).
-- 
+TL;DR This repo contains work on development of animal pose estimation model using the animal kingdom data.
+
+# What is in this repo?
+- Finetune of VHRNet model on animal kingdom dataset.
+- A pypi package that can be downloaded and installed with pip install aja-pose
+- An object detection model for detecting animals
+- A webpage that hightlights this work.
+
+Examples of the predictions vs ground truth images.
 Ground Truth
 ![image](https://github.com/Antony-gitau/2024_ICME_Challenge/assets/88529649/d8c4c84a-88c9-4ef7-bcf3-842e5e74d42b)
 
