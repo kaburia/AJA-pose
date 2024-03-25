@@ -50,7 +50,7 @@ class Model:
         
         
     # train the model on the images and the annotations
-    def train(self, images_directory_path, annotations_mpii_json, pretrained=True):
+    def train(self, images_directory_path, train_mpii_json, valid_mpii_json, pretrained=None):
         # make the images and annotations in the correct format
         '''
         data
@@ -59,7 +59,8 @@ class Model:
         │   ├── image2.jpg
         
         ├── annot
-        │   ├── annotations_mpii_json.json
+        │   ├── train_mpii_json.json # train.json
+        │   ├── valid_mpii_json.json # valid.json
         
         output # logs and the image results from output/vhr_s and log/vhr_s
         ├── output
@@ -67,15 +68,25 @@ class Model:
         │   ├── log
         '''
         # copy the images input to the data/images directory and the annotations to the data/annot directory where the module is
-        os.system(f'cp -r {images_directory_path}/* {module_dir}/data/images')
-        os.system(f'cp -r {annotations_mpii_json} {module_dir}/data/annot')
+       
+        # create data/annot and output/vhr_s directories at the current working directory
+        current_dir = os.getcwd()
+        os.makedirs(f'{current_dir}/data/annot', exist_ok=True)
+        os.makedirs(f'{current_dir}/data/images', exist_ok=True)
+        os.makedirs(f'{current_dir}/output/vhr_s', exist_ok=True)
+
+
+        # copy files 
+        os.system(f'cp -r {images_directory_path}/* {current_dir}/data/images')
+        os.system(f'cp -r {train_mpii_json} {current_dir}/data/annot')
+        os.system(f'cp -r {valid_mpii_json} {current_dir}/data/annot')
         
-        if pretrained:
+        if pretrained is None:
             # The model file based on the argument passed
             self.write_yaml(yaml_file, pretrained_model)
         else:
             # The model file based on the argument passed
-            self.write_yaml(yaml_file, pretrained='')
+            self.write_yaml(yaml_file, pretrained=pretrained)
 
         # train the model
         print('Training the model...')
@@ -86,15 +97,15 @@ class Model:
         output_directory = os.path.join(output_directory, 'output_train')
         
         os.makedirs(output_directory, exist_ok=True)
-        os.system(f'mv {module_dir}/output/vhr_s {output_directory}')
-        os.system(f'mv {module_dir}/log/vhr_s {output_directory}')
+        os.system(f'mv {current_dir}/output/vhr_s {output_directory}')
+        os.system(f'mv {current_dir}/log/vhr_s {output_directory}')
         print(f'Find results at: {output_directory}')
 
         # clean up the data directory and the output directory 
-        os.system(f'rm -r {module_dir}/data/images/*')
-        os.system(f'rm -r {module_dir}/data/annot/*')
-        os.system(f'rm -r {module_dir}/output/vhr_s/*')
-        os.system(f'rm -r {module_dir}/log/vhr_s/*')
+        os.system(f'rm -r {current_dir}/data/*')
+        # os.system(f'rm -r {current_dir}/data/*')
+        os.system(f'rm -r {current_dir}/output/*')
+        os.system(f'rm -r {current_dir}/log/*')
     
     def test(self, images_directory_path, annotations_mpii_json, model=pretrained_model):
         # Note the name of the files need to be the same as the column image in the annotations_mpii_json
@@ -114,16 +125,28 @@ class Model:
         │   ├── log
         '''
         # copy the images input to the data/images directory and the annotations to the data/annot directory where the module is
-        os.system(f'cp -r {images_directory_path}/* {module_dir}/data/images')
-        os.system(f'cp -r {annotations_mpii_json} {module_dir}/data/annot')
+        # os.system(f'cp -r {images_directory_path}/* {module_dir}/data/images')
+        # os.system(f'cp -r {annotations_mpii_json} {module_dir}/data/annot')
 
         # The model file based on the argument passed
         self.write_yaml(yaml_file, test_model=model)    
         print(module_dir)    
+        # create data/annot and output/vhr_s directories at the current working directory
+        current_dir = os.getcwd()
+        os.makedirs(f'{current_dir}/data/annot', exist_ok=True)
+        os.makedirs(f'{current_dir}/data/images', exist_ok=True)
+        os.makedirs(f'{current_dir}/output/vhr_s', exist_ok=True)
+
+
+        # copy files 
+        os.system(f'cp -r {images_directory_path}/* {current_dir}/data/images')
+        os.system(f'cp -r {annotations_mpii_json} {current_dir}/data/annot')
 
         # test the model
         print('Testing the model...')
+        # change directory to the module directory but after run change back to working directory
         test_main(args)
+        
         # command  = f'python {module_dir}/tools/test.py --cfg {yaml_file}'
         # subprocess.call(command, shell=True)
         # subprocess.run(['python', f'{module_dir}/tools/test.py'] + arguments)
@@ -134,15 +157,15 @@ class Model:
         output_directory = os.path.join(output_directory, 'output_test')
 
         os.makedirs(output_directory, exist_ok=True)
-        os.system(f'mv {module_dir}/output/vhr_s {output_directory}')
-        os.system(f'mv {module_dir}/log/vhr_s {output_directory}')
+        os.system(f'mv {current_dir}/output/vhr_s {output_directory}')
+        os.system(f'mv {current_dir}/log/vhr_s {output_directory}')
         print(f'Find results at: {output_directory}')
 
         # clean up the data directory and the output directory 
-        os.system(f'rm -r {module_dir}/data/images/*')
-        os.system(f'rm -r {module_dir}/data/annot/*')
-        os.system(f'rm -r {module_dir}/output/vhr_s/*')
-        os.system(f'rm -r {module_dir}/log/vhr_s/*')
+        os.system(f'rm -r {current_dir}/data/*')
+        # os.system(f'rm -r {current_dir}/data/annot/*')
+        os.system(f'rm -r {current_dir}/output/*')
+        os.system(f'rm -r {current_dir}/log/*')
 
     # def visualize(self):
     #     # visualize the model
