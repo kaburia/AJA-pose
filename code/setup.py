@@ -5,8 +5,7 @@ import os
 
 class BuildExt(build_ext):
     def run(self):
-        os.chdir('aja_pose/lib')
-        os.system('make')
+        os.system('cd aja_pose/lib && make')
         build_ext.run(self)
 
 

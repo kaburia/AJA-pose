@@ -10,15 +10,14 @@
 import os
 import yaml
 import subprocess
+import sys
 # get the current path
 module_dir = os.path.dirname(__file__)
 
-os.chdir(f'{module_dir}/tools')
+sys.path.append(os.path.join(module_dir, 'tools'))
+
 from aja_pose.tools.train import main as train_main
 from aja_pose.tools.test import main as test_main
-os.chdir('..')
-print(os.getcwd())
-
 
 
  # yaml file path
@@ -38,8 +37,6 @@ args = Args(cfg=yaml_file)
 
 # Model class to test and train the model
 class Model:
-    
-    
     # adjust the model path in the yaml file
     def write_yaml(self, yaml_file, pretrained=pretrained_model, test_model=pretrained_model):
         with open(yaml_file, 'r') as file:
@@ -147,6 +144,6 @@ class Model:
         os.system(f'rm -r {module_dir}/output/vhr_s/*')
         os.system(f'rm -r {module_dir}/log/vhr_s/*')
 
-    def visualize(self):
-        # visualize the model
-        os.system(f'python tools/visualize.py --cfg {yaml_file} MODEL.MODEL_FILE {pretrained_model}')
+    # def visualize(self):
+    #     # visualize the model
+    #     os.system(f'python tools/visualize.py --cfg {yaml_file} MODEL.MODEL_FILE {pretrained_model}')
