@@ -58,3 +58,9 @@ model_file = '' # A pytorch model file to pretrain on.
 model.train(images_directory, train_json, valid_json, pretrained=model_file)
 ```
 
+### Results
+A sanity check on our model for the different 
+
+![image3](https://github.com/Antony-gitau/AJA-pose/assets/88529649/266e526c-48aa-4401-b411-5f161a734c83)
+![image6](https://github.com/Antony-gitau/AJA-pose/assets/88529649/615f5498-1be9-4235-8df2-11e46bfb1384)
+
