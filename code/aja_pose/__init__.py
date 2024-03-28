@@ -9,7 +9,7 @@
 # get the dir current path
 import os
 import yaml
-import subprocess
+import json
 import sys
 import warnings
 warnings.filterwarnings("ignore")
@@ -39,6 +39,33 @@ args = Args(cfg=yaml_file)
 
 # Model class to test and train the model
 class Model:
+    # Choose the annotations to train and test the model from the data and specify the protocol and test/train
+    def annot(self, protocol='P1', test_train='test', animal_class=None):
+        '''
+        Input is either P1,P2 or P3
+        If P3 animal class is required which is: [bird, fish, mammal, reptile, amphibian]
+        returns the path to the json file
+        '''
+        if protocol == 'P1' or protocol == 'P2':
+            if test_train == 'test':
+                return os.path.join(module_dir, 'data', 'annot', f'ak_{protocol}',  'test.json')
+            elif test_train == 'train':
+                return os.path.join(module_dir, 'data', 'annot', f'ak_{protocol}',  'test.json')
+            else:
+                raise ValueError('test_train should be either test or train')
+        elif protocol == 'P3':
+           if animal_class == None:
+               raise ValueError('animal_class is required for protocol P3')
+           else:
+               if test_train == 'test':
+                   return os.path.join(module_dir, 'data', 'annot', f'ak_{protocol}_{animal_class}',  'test.json')
+               elif test_train == 'train':
+                   return os.path.join(module_dir, 'data', 'annot', f'ak_{protocol}_{animal_class}',  'train.json')
+               else:
+                   raise ValueError('test_train should be either test or train')
+        else:
+            raise ValueError('protocol should be either P1, P2 or P3')
+
     # adjust the model path in the yaml file
     def write_yaml(self, yaml_file, pretrained=pretrained_model, test_model=pretrained_model):
         with open(yaml_file, 'r') as file:
@@ -52,7 +79,8 @@ class Model:
         
         
     # train the model on the images and the annotations
-    def train(self, images_directory_path, train_mpii_json, valid_mpii_json, pretrained=None):
+    def train(self, images_directory_path, train_mpii_json=None, valid_mpii_json=None, 
+              protocol=None, animal_class=None, pretrained=None):
         # make the images and annotations in the correct format
         '''
         data
@@ -69,7 +97,13 @@ class Model:
         │   ├── vhr_s
         │   ├── log
         '''
-        # copy the images input to the data/images directory and the annotations to the data/annot directory where the module is
+        if protocol is not None:
+            train_mpii_json = self.annot(protocol=protocol, test_train='train', animal_class=animal_class)
+            valid_mpii_json = self.annot(protocol=protocol, test_train='test', animal_class=animal_class)
+        else:
+            if train_mpii_json is None or valid_mpii_json is None:
+                raise ValueError('train_mpii_json and valid_mpii_json is required if protocol is not provided')            
+
        
         # create data/annot and output/vhr_s directories at the current working directory
         current_dir = os.getcwd()
@@ -109,9 +143,10 @@ class Model:
         os.system(f'rm -r {current_dir}/output/*')
         os.system(f'rm -r {current_dir}/log/*')
     
-    def test(self, images_directory_path, annotations_mpii_json, model=pretrained_model):
+    def test(self, images_directory_path, annotations_mpii_json=None, protocol=None, animal_class=None, model=pretrained_model):
         # Note the name of the files need to be the same as the column image in the annotations_mpii_json
         # make the images and annotations in the correct format
+        
         '''
         data
         ├── images
@@ -124,11 +159,17 @@ class Model:
         output # logs and the image results from output/vhr_s and log/vhr_s
         ├── output
         │   ├── vhr_s
-        │   ├── log
+        │   ├── log    
         '''
         # copy the images input to the data/images directory and the annotations to the data/annot directory where the module is
         # os.system(f'cp -r {images_directory_path}/* {module_dir}/data/images')
         # os.system(f'cp -r {annotations_mpii_json} {module_dir}/data/annot')
+
+        if protocol is not None:
+            annotations_mpii_json = self.annot(protocol=protocol, test_train='test', animal_class=animal_class)
+        else:
+            if annotations_mpii_json is None:
+                raise ValueError('annotations_mpii_json is required if protocol is not provided')
 
         # The model file based on the argument passed
         self.write_yaml(yaml_file, test_model=model)    
@@ -146,7 +187,7 @@ class Model:
 
         # test the model
         print('Testing the model...')
-        # change directory to the module directory but after run change back to working directory
+        # change directory to the module directory but after run     change back to working directory
         test_main(args)
         
         # command  = f'python {module_dir}/tools/test.py --cfg {yaml_file}'
