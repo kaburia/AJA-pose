@@ -1,5 +1,5 @@
 Welcome to our module!
-# AJA-pose
+# Aja-pose
 
 AJA-pose helps you train, validate and test your animal pose estimation model.
 Check out how we have done it in Google Colab.
@@ -70,4 +70,19 @@ Ground Truth
 Predictions
 ![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/efe360f8-3d5f-44b4-a396-a364096a2b4d)
 
+### Performance
+The performance of our model on the different animal classes is as shown below.
 
+| Animal Class | Samples |  | Head | Shoulder | Elbow | Wrist | Hip | Knee | Ankle | Mouth | Tail | Mean |
+|------|---------|--|------|----------|-------|-------|-----|------|-------|-------|------|------|
+| Birds | 1705 |  | 95.756 | 93.637 | 89.774 | 88.179 | 98.975 | 97.582 | 94.326 | 98.447 | 95.112 | 95.164 |
+| Reptiles | 1209 |  | 91.538 | 85.291 | 84.662 | 85.587 | 90.457 | 88.097 | 85.239 | 96.723 | 83.925 | 89.553 |
+| Mammals | 1496 |  | 90.641 | 89.269 | 88.509 | 89.927 | 90.263 | 88.655 | 89.535 | 93.622 | 82.161 | 90.038 |
+| Fish | 918  |  | 96.468 | 96.249 | 98.643 | 96.058 | 98.403 | 96.743 | 95.775 | 97.564 | 98.256 | 96.467 |
+| Amphibian | 1279 |  | 98.128 | 94.342 | 97.948 | 98.508 | 95.491 | 94.957 | 94.319 | 98.702 | 99.568 | 95.493 |
+
+The model performance on Protocol 1 and Protocol 2 is as shown below.
+| Protocol | Samples |  | Head | Shoulder | Elbow | Wrist | Hip | Knee | Ankle | Mouth | Tail | Mean |
+|----------|---------|--|------|----------|-------|-------|-----|------|-------|-------|------|------|
+| P1       |    6620     |  | 95.756 | 93.637 | 89.774 | 88.179 | 98.975 | 97.582 | 94.326 | 98.447 | 95.112 |  |
+| P2       |         |  | 91.538 | 85.291 | 84.662 | 85.587 | 90.457 | 88.097 | 85.239 | 96.723 | 83.925 | 89.553 |
