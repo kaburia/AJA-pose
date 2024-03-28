@@ -3,9 +3,12 @@ from setuptools.command.build_ext import build_ext
 import sys
 import os
 
+# get the absolute path of the current directory
+module_dir = os.path.dirname(__file__)
+
 class BuildExt(build_ext):
     def run(self):
-        os.system('cd aja_pose/lib && make')
+        os.system(f'cd {module_dir}/aja_pose/lib && make')
         build_ext.run(self)
 
 
