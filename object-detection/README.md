@@ -1,0 +1,1 @@
+This is a fine tune of the object detection model using the animal kingdom dataset
