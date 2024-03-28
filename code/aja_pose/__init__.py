@@ -11,6 +11,8 @@ import os
 import yaml
 import subprocess
 import sys
+import warnings
+warnings.filterwarnings("ignore")
 # get the current path
 module_dir = os.path.dirname(__file__)
 
