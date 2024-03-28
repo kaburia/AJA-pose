@@ -1,14 +1,20 @@
 # [AJA-pose](https://sutdcv.github.io/MMVRAC/)
 
-TL;DR This repo contains work on development of animal pose estimation model using the animal kingdom data.
+TL;DR This repo contains work on development of animal pose estimation model using the animal kingdom dataset.
 
 # What is in this repo?
-- Finetune of VHRNet model on animal kingdom dataset.
-- A pypi package that can be downloaded and installed with pip install aja-pose
-- An object detection model for detecting animals
-- A webpage that hightlights this work.
+- AJA/pose folder contains a [ReactJS based web app](https://aja-sage.vercel.app/home#home) that describe the challenge we are taking part in.
+- Code folder contains:
+    - Finetuned VHRNet model on animal kingdom dataset.
+    - A pypi package that can be downloaded and installed with pip install aja-pose
+
+- Object detection folder contains
+    - a fine tuned YOLOV8  model for detecting animals using animal kingdom dataset.
+
+Follow the steps.md file to reproduce the VHRModel.
 
 Examples of the predictions vs ground truth images.
+
 Ground Truth
 ![image](https://github.com/Antony-gitau/2024_ICME_Challenge/assets/88529649/d8c4c84a-88c9-4ef7-bcf3-842e5e74d42b)
 
