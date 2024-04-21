@@ -12,14 +12,10 @@ import yaml
 import json
 import sys
 import warnings
+import os.path as osp
 warnings.filterwarnings("ignore")
 # get the current path
 module_dir = os.path.dirname(__file__)
-
-sys.path.append(os.path.join(module_dir, 'tools'))
-
-from aja_pose.tools.train import main as train_main
-from aja_pose.tools.test import main as test_main
 
 
  # yaml file path
@@ -38,7 +34,8 @@ class Args:
 args = Args(cfg=yaml_file)
 
 # Model class to test and train the model
-class Model:
+class Model:        
+
     # Choose the annotations to train and test the model from the data and specify the protocol and test/train
     def annot(self, protocol='P1', test_train='test', animal_class=None):
         '''
@@ -81,6 +78,9 @@ class Model:
     # train the model on the images and the annotations
     def train(self, images_directory_path, train_mpii_json=None, valid_mpii_json=None, 
               protocol=None, animal_class=None, pretrained=None):
+        # get the train method
+        sys.path.append(os.path.join(module_dir, 'tools'))
+        from aja_pose.tools.train import main as train_main
         # make the images and annotations in the correct format
         '''
         data
@@ -144,6 +144,9 @@ class Model:
         os.system(f'rm -r {current_dir}/log/*')
     
     def test(self, images_directory_path, annotations_mpii_json=None, protocol=None, animal_class=None, model=pretrained_model):
+        # get the test method
+        sys.path.append(os.path.join(module_dir, 'tools'))
+        from aja_pose.tools.test import main as test_main
         # Note the name of the files need to be the same as the column image in the annotations_mpii_json
         # make the images and annotations in the correct format
         
@@ -213,3 +216,10 @@ class Model:
     # def visualize(self):
     #     # visualize the model
     #     os.system(f'python tools/visualize.py --cfg {yaml_file} MODEL.MODEL_FILE {pretrained_model}')
+
+class RunInferences:
+    # add path to lib directory
+    def add_path(self):
+        lib_path = osp.join(module_dir, 'lib')
+        if lib_path not in sys.path:
+            sys.path.insert(0, lib_path)
