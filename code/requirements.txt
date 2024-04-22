@@ -79,9 +79,9 @@ tensorboard-data-server==0.7.2
 tensorboardX==2.6.2.2
 tifffile==2023.7.10
 timm
-torch==2.2.1+cu121
-torchvision==0.17.1+cu121
-torchaudio==2.2.1+cu121
+torch
+torchvision
+torchaudio
 tqdm==4.66.2
 # triton
 typing-extensions==4.10.0
