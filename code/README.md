@@ -82,9 +82,11 @@ A sanity check on our model.
 ![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/54b64c7d-c3e6-44b6-8ed0-90f1b14cb52a)
 
 <br>
+
 Ground Truth
 ![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/c7b8275d-04a5-420a-b8c5-1da70eaf6d9f)
 <br>
+
 Predictions
 ![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/efe360f8-3d5f-44b4-a396-a364096a2b4d)
 
