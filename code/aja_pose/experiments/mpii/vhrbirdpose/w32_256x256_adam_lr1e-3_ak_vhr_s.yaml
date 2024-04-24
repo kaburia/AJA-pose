@@ -94,7 +94,7 @@ MODEL:
   INIT_WEIGHTS: true
   NAME: pose_vhr
   NUM_JOINTS: 23
-  PRETRAINED: c:\Users\Austin\Desktop\Agent\5-final-year\animal-kingdom\hold\2024_ICME_Challenge\code\aja_pose\modelDir\all_animals_no_pretrain_106.pth
+  PRETRAINED: c:\Users\HP\Desktop\DSAIL\AJA-pose\code\aja_pose\modelDir\all_animals_no_pretrain_106.pth
   SIGMA: 2
   TARGET_TYPE: gaussian
 OUTPUT_DIR: output/vhr_s
@@ -102,7 +102,7 @@ PRINT_FREQ: 100
 TEST:
   BATCH_SIZE_PER_GPU: 8
   FLIP_TEST: true
-  MODEL_FILE: c:\Users\Austin\Desktop\Agent\5-final-year\animal-kingdom\hold\2024_ICME_Challenge\code\aja_pose\modelDir\all_animals_no_pretrain_106.pth
+  MODEL_FILE: c:\Users\HP\Desktop\DSAIL\AJA-pose\code\aja_pose\modelDir\all_animals_no_pretrain_106.pth
   POST_PROCESS: true
   SHIFT_HEATMAP: true
 TRAIN:
