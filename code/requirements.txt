@@ -86,6 +86,7 @@ tqdm==4.66.2
 # triton
 typing-extensions==4.10.0
 tzdata==2024.1
+ultralytics==8.0.196
 urllib3==2.2.1
 werkzeug==3.0.1
 yacs==0.1.8
