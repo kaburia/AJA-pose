@@ -30,7 +30,7 @@ setup(
     description='Animal pose estimation using Vision Transformers and HRNet(VHR)',
     author='Austin Kaburia, Joan Kabura, Antony Gitau',
     author_email='kaburiaaustin1@gmail.com, joankabura1@gmail.com, antonym.gitau9@gmail.com',
-    url = 'https://github.com/Antony-gitau/2024_ICME_Challenge',
+    url = 'https://github.com/Antony-gitau/AJA-pose',
     install_requires=required,
     long_description=long_description,
     long_description_content_type="text/markdown",
