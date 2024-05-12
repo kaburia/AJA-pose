@@ -1,5 +1,5 @@
 Welcome to our module!
-# Aja-pose
+# AJA-pose
 
 AJA-pose helps you train, validate and test your animal pose estimation model.
 Check out how we have done it in Google Colab.
