@@ -1,4 +1,5 @@
 # [AJA-pose](https://sutdcv.github.io/MMVRAC/)
+[Google Drive - AJA-pose: A Framework for Animal Pose Estimation based on VHR Network Architecture](https://drive.google.com/file/d/117zGuvkHeS17XW3wkq24pcRZE6V4dtzk/view?usp=drive_link)
 
 TL;DR This repo contains work on development of animal pose estimation model using the animal kingdom dataset.
 
@@ -22,3 +23,7 @@ Ground Truth
 
 Prediction
 ![image](https://github.com/Antony-gitau/2024_ICME_Challenge/assets/88529649/1db2b2bc-94a5-4f2d-acce-9bb85986ca05)
+
+
+https://github.com/kaburia/AJA-pose/assets/88529649/e6f2e29d-a71a-4740-bab3-7540cdac722a
+
