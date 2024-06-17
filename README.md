@@ -1,5 +1,5 @@
 # [AJA-pose](https://sutdcv.github.io/MMVRAC/)
-[Google Drive - AJA-pose: A Framework for Animal Pose Estimation based on VHR Network Architecture](https://drive.google.com/file/d/117zGuvkHeS17XW3wkq24pcRZE6V4dtzk/view?usp=drive_link)
+
 
 TL;DR This repo contains work on development of animal pose estimation model using the animal kingdom dataset.
 
