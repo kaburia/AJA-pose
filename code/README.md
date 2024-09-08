@@ -78,10 +78,15 @@ A sanity check on our model.
 
 ![image3](https://github.com/Antony-gitau/AJA-pose/assets/88529649/266e526c-48aa-4401-b411-5f161a734c83)
 ![image6](https://github.com/Antony-gitau/AJA-pose/assets/88529649/615f5498-1be9-4235-8df2-11e46bfb1384)
+![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/296e56c4-fa9f-4683-94c3-a7d7bc327444)
+![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/54b64c7d-c3e6-44b6-8ed0-90f1b14cb52a)
+
 <br>
+
 Ground Truth
 ![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/c7b8275d-04a5-420a-b8c5-1da70eaf6d9f)
 <br>
+
 Predictions
 ![image](https://github.com/Antony-gitau/AJA-pose/assets/88529649/efe360f8-3d5f-44b4-a396-a364096a2b4d)
 
