@@ -7,7 +7,7 @@ TL;DR This repo contains work on development of animal pose estimation model usi
 - AJA/pose folder contains a [ReactJS based web app](https://aja-pose.vercel.app/) that describe the challenge we are taking part in.
 - Code folder contains:
     - Finetuned VHRNet model on animal kingdom dataset.
-    - A [PyPI package](https://pypi.org/project/aja-pose/) that can be downloaded and installed with pip install aja-pose
+    - A [PyPI package](https://pypi.org/project/aja-pose/) that can be downloaded and installed with ```pip install aja-pose```
 
 - Object detection folder contains
     - a fine tuned YOLOV8  model for detecting animals using animal kingdom dataset.
